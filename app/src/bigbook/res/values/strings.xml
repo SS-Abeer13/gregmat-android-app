@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Big Book-specific overrides of shared string resources. app_name itself
+  stays set via resValue in build.gradle.kts (already flavor-specific); this
+  file only overrides what ReminderScheduler.ensureChannel() reads.
+-->
+<resources>
+    <string name="notification_channel_name">GRE Exam Reminders</string>
+    <string name="notification_channel_description">Reminders for Day Tests, timed section drills, and mistake-notebook review.</string>
+</resources>

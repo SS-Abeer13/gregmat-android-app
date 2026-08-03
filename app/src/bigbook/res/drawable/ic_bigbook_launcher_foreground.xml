@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Big Book launcher foreground: a stopwatch — the timed-exam-simulator
+  identity, not the Vocab Pro book mascot. Deliberately circular rather than
+  a tall rectangle (a clipboard version of this icon looked squished/too
+  vertical) — a circle is inherently balanced in both dimensions and sits
+  centered in the adaptive-icon 108dp square's 72dp safe zone (18..90).
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Crown button — kept inside the 18..90 safe zone (y>=18) so it
+         can't get clipped by a circular/squircle launcher mask. -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M51,18 L57,18 A3,3 0 0 1 60,21 L60,25 A3,3 0 0 1 57,28 L51,28 A3,3 0 0 1 48,25 L48,21 A3,3 0 0 1 51,18 Z" />
+    <!-- Watch face -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M54,58 m-30,0 a30,30 0 1,0 60,0 a30,30 0 1,0 -60,0" />
+    <!-- Inner rim accent -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFEA580C"
+        android:strokeWidth="3"
+        android:pathData="M54,58 m-25,0 a25,25 0 1,0 50,0 a25,25 0 1,0 -50,0" />
+    <!-- Hands -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFDC2626"
+        android:strokeWidth="4.5"
+        android:strokeLineCap="round"
+        android:pathData="M54,58 L54,38 M54,58 L68,58" />
+    <!-- Pivot -->
+    <path
+        android:fillColor="#FFDC2626"
+        android:pathData="M54,58 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0" />
+</vector>

@@ -1,0 +1,27 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+.kotlin/
+*.hprof
+
+# Web bundle synced in by build_app.bat/build scripts (regenerated from the
+# GregMat-GRE-Vocab-Pro `vite build` output) — not source, don't track it.
+# It also risks baking in old .env secrets from past builds.
+app/src/main/assets/dist/
+app/src/main/assets/assets/
+app/src/main/assets/index.html
+app/src/main/assets/sw.js
+app/src/main/assets/manifest.json
+app/src/bigbook/assets/dist/

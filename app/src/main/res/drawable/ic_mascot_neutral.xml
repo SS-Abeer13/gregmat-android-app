@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mascot: NEUTRAL - past noon, lesson still not done.
+  Book mascot for the GregMat Vocab app. Rebuilt as a VectorDrawable from the
+  original 192px artwork so the adaptive icon stays sharp at every density.
+  Canvas is the adaptive-icon 108dp square; the book sits inside the 72dp
+  safe area (18..90) so no launcher mask can clip it.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Book body -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M36.5,28 L71.5,28 A4.5,4.5 0 0 1 76,32.5 L76,75.5 A4.5,4.5 0 0 1 71.5,80 L36.5,80 A4.5,4.5 0 0 1 32,75.5 L32,32.5 A4.5,4.5 0 0 1 36.5,28 Z" />
+    <!-- Left page / spine shading -->
+    <path
+        android:fillColor="#FFC7D2FE"
+        android:pathData="M36.5,28 L44,28 L44,80 L36.5,80 A4.5,4.5 0 0 1 32,75.5 L32,32.5 A4.5,4.5 0 0 1 36.5,28 Z" />
+    <!-- Right page edge -->
+    <path
+        android:fillColor="#FFE0E7FF"
+        android:pathData="M72,28 L71.5,28 A4.5,4.5 0 0 1 76,32.5 L76,75.5 A4.5,4.5 0 0 1 71.5,80 L72,80 Z" />
+    <!-- Bookmark ribbon -->
+    <path
+        android:fillColor="#FFF59E0B"
+        android:pathData="M64.1,28 L70.3,28 L70.3,42.8 L67.2,39.2 L64.1,42.8 Z" />
+    <!-- Eyes -->
+    <path
+        android:fillColor="#FF312E81"
+        android:pathData="M52.9,47.8 m-4.0,0 a4.0,4.0 0 1,0 8.0,0 a4.0,4.0 0 1,0 -8.0,0" />
+    <path
+        android:fillColor="#FF312E81"
+        android:pathData="M66.8,47.8 m-4.0,0 a4.0,4.0 0 1,0 8.0,0 a4.0,4.0 0 1,0 -8.0,0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M54.199999999999996,46.4 m-1.25,0 a1.25,1.25 0 1,0 2.5,0 a1.25,1.25 0 1,0 -2.5,0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M68.1,46.4 m-1.25,0 a1.25,1.25 0 1,0 2.5,0 a1.25,1.25 0 1,0 -2.5,0" />
+    <!-- Flat, unimpressed mouth -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF312E81"
+        android:strokeWidth="2.9"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M52,63.8 L68,63.8" />
+    <!-- Faint text line on the lower page -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFE0E7FF"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M50,73.5 L70,73.5" />
+</vector>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Exact alarms. Without SCHEDULE_EXACT_ALARM every setExactAndAllowWhileIdle
+         call throws SecurityException on Android 12+, which is why reminders
+         silently never fired. USE_EXACT_ALARM (Android 13+) is granted at install
+         time for alarm/reminder apps and needs no runtime prompt. -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+    <!-- Alarms are cleared on reboot; this lets us put them back. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:windowSoftInputMode="adjustResize"
+        android:theme="@style/Theme.GregMatVocabPro">
+        
+        <receiver android:name=".NotificationReceiver" android:exported="false" />
+
+        <!-- Daily re-evaluation of the mascot icon while the app is closed. -->
+        <receiver android:name=".IconRefreshReceiver" android:exported="false" />
+
+        <!-- Re-arms every enabled reminder after a reboot or an app update. -->
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- No LAUNCHER filter here: the activity-alias entries below own the
+             launcher entry so the icon can be swapped at runtime. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <!--
+          Dynamic launcher icon.
+
+          Android cannot generate an icon at runtime; the only supported approach
+          is to declare every variant as an <activity-alias> and enable exactly
+          one. IconManager picks the alias based on days since the app was opened.
+
+          Exactly one alias must start enabled, otherwise the app has no launcher
+          entry at all on first install.
+        -->
+        <activity-alias
+            android:name=".MainActivityHappy"
+            android:targetActivity=".MainActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_happy"
+            android:roundIcon="@mipmap/ic_launcher_happy_round"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".MainActivityNeutral"
+            android:targetActivity=".MainActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_neutral"
+            android:roundIcon="@mipmap/ic_launcher_neutral_round"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".MainActivitySad"
+            android:targetActivity=".MainActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_sad"
+            android:roundIcon="@mipmap/ic_launcher_sad_round"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".MainActivityCrying"
+            android:targetActivity=".MainActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_crying"
+            android:roundIcon="@mipmap/ic_launcher_crying_round"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+    </application>
+
+</manifest>

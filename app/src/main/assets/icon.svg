@@ -1,0 +1,43 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect x="0" y="0" width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <!-- Book icon -->
+  <g transform="translate(96 128)">
+    <!-- Book spine -->
+    <path d="M0 32 C0 14 14 0 32 0 L288 0 C306 0 320 14 320 32 L320 224 C320 242 306 256 288 256 L32 256 C14 256 0 242 0 224 Z"
+          fill="#ffffff" opacity="0.95"/>
+    <!-- Center fold line -->
+    <line x1="160" y1="16" x2="160" y2="240" stroke="#c4b5fd" stroke-width="3" opacity="0.6"/>
+
+    <!-- Left page text lines -->
+    <rect x="24" y="48" width="112" height="8" rx="4" fill="#6366f1" opacity="0.8"/>
+    <rect x="24" y="72" width="96" height="6" rx="3" fill="#8b5cf6" opacity="0.6"/>
+    <rect x="24" y="92" width="104" height="6" rx="3" fill="#8b5cf6" opacity="0.5"/>
+    <rect x="24" y="112" width="80" height="6" rx="3" fill="#8b5cf6" opacity="0.6"/>
+    <rect x="24" y="140" width="112" height="6" rx="3" fill="#8b5cf6" opacity="0.5"/>
+    <rect x="24" y="160" width="96" height="6" rx="3" fill="#8b5cf6" opacity="0.6"/>
+
+    <!-- Right page - "GRE" big text -->
+    <text x="240" y="140" font-family="Arial Black, sans-serif" font-size="64" font-weight="900"
+          fill="#4f46e5" text-anchor="middle">GRE</text>
+    <rect x="184" y="160" width="112" height="4" rx="2" fill="url(#accent)"/>
+  </g>
+
+  <!-- Star badge (top right) -->
+  <g transform="translate(360 80)">
+    <circle cx="0" cy="0" r="42" fill="url(#accent)"/>
+    <path d="M0 -22 L6 -7 L22 -5 L10 5 L14 20 L0 12 L-14 20 L-10 5 L-22 -5 L-6 -7 Z"
+          fill="#ffffff"/>
+  </g>
+</svg>

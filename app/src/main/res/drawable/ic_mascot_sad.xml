@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mascot: SAD - past 6 PM, the streak is slipping.
+  Book mascot for the GregMat Vocab app. Rebuilt as a VectorDrawable from the
+  original 192px artwork so the adaptive icon stays sharp at every density.
+  Canvas is the adaptive-icon 108dp square; the book sits inside the 72dp
+  safe area (18..90) so no launcher mask can clip it.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Book body -->
+    <path
+        android:fillColor="#FFF1F5F9"
+        android:pathData="M36.5,28 L71.5,28 A4.5,4.5 0 0 1 76,32.5 L76,75.5 A4.5,4.5 0 0 1 71.5,80 L36.5,80 A4.5,4.5 0 0 1 32,75.5 L32,32.5 A4.5,4.5 0 0 1 36.5,28 Z" />
+    <!-- Left page / spine shading -->
+    <path
+        android:fillColor="#FFCBD5E1"
+        android:pathData="M36.5,28 L44,28 L44,80 L36.5,80 A4.5,4.5 0 0 1 32,75.5 L32,32.5 A4.5,4.5 0 0 1 36.5,28 Z" />
+    <!-- Right page edge -->
+    <path
+        android:fillColor="#FFE2E8F0"
+        android:pathData="M72,28 L71.5,28 A4.5,4.5 0 0 1 76,32.5 L76,75.5 A4.5,4.5 0 0 1 71.5,80 L72,80 Z" />
+    <!-- Drooping brows -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF334155"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M47.2,42.6 Q51.8,40.2 56.3,42.9" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF334155"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M72.6,42.6 Q68.0,40.2 63.5,42.9" />
+    <!-- Heavy half-lidded eyes -->
+    <path
+        android:fillColor="#FF334155"
+        android:pathData="M48.9,47.8 A3.95,5.1 0 0 0 56.8,47.8 Z" />
+    <path
+        android:fillColor="#FF334155"
+        android:pathData="M62.6,47.8 A3.95,5.1 0 0 0 70.5,47.8 Z" />
+    <!-- Frown -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF334155"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M50.8,67.9 Q60,60.4 69.2,67.9" />
+    <!-- Faint text line on the lower page -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFE2E8F0"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M50,73.5 L70,73.5" />
+</vector>
