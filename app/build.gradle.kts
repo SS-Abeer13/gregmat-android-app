@@ -22,8 +22,8 @@ android {
             // Launcher label. The Sad/Crying mood aliases use the *_practice /
             // *_hurry variants so the home-screen name escalates with the icon.
             resValue("string", "app_name", "VocabPro")
-            resValue("string", "app_name_practice", "VocabPro - Practice?")
-            resValue("string", "app_name_hurry", "VocabPro - Hurry Up!")
+            resValue("string", "app_name_practice", "VocabPro-Practice❓")
+            resValue("string", "app_name_hurry", "VocabPro-HurryUp⏰")
         }
         create("bigbook") {
             dimension = "appMode"
