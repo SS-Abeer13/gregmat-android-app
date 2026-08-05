@@ -50,15 +50,28 @@ object IconManager {
     }
 
     fun setAppIcon(context: Context, key: String) {
+        // IMPORTANT: only *queue* the desired icon here. Toggling the launcher
+        // activity-alias while the app is in the foreground tears down the
+        // running task (even with DONT_KILL_APP), which is what made the app
+        // "auto close" on every mood change. The actual switch is deferred to
+        // applyPendingIconSwitch(), called from MainActivity.onStop() — i.e.
+        // when the user has already left/closed the app.
         val state = IconState.fromKey(key)
         prefs(context).edit().putString(KEY_PENDING_ALIAS, state.getAlias(context)).apply()
-        Log.i(TAG, "Setting dynamic icon to ${state.name} for key '$key'")
-        apply(context, state)
+        Log.i(TAG, "Queued dynamic icon ${state.name} for key '$key' (applies on app close)")
     }
 
-    /** Halted automatic icon switch on stop. */
+    /**
+     * Applies whatever icon was last queued by [setAppIcon]. Call this only
+     * when the app is leaving the foreground (onStop), so the alias swap can't
+     * kill a visible activity.
+     */
     fun applyPendingIconSwitch(context: Context) {
-        // No-op: halted per user request
+        val pending = prefs(context).getString(KEY_PENDING_ALIAS, null) ?: return
+        val current = prefs(context).getString(KEY_CURRENT_ALIAS, null)
+        if (pending == current) return
+        val state = IconState.entries.firstOrNull { it.getAlias(context) == pending } ?: return
+        apply(context, state)
     }
 
     /** Recompute from the stored timestamp. Safe to call as often as you like. */

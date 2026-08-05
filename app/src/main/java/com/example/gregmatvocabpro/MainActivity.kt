@@ -24,10 +24,20 @@ class MainActivity : ComponentActivity() {
     }
 
     ReminderScheduler.rescheduleFromStorage(this)
+    // Mark the app as opened (feeds the days-away icon heuristic).
+    IconManager.onAppOpened(this)
 
     enableEdgeToEdge()
     setContent {
       GregMatVocabProTheme { Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) { MainNavigation() } }
     }
+  }
+
+  override fun onStop() {
+    super.onStop()
+    // Apply any queued launcher-icon (mood) change now that we're leaving the
+    // foreground — doing it here instead of live avoids the activity-alias
+    // swap tearing down the running task (the "app auto closes" bug).
+    IconManager.applyPendingIconSwitch(this)
   }
 }
