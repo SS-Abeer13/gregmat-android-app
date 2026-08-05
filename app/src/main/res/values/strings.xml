@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">GregMat Vocab Pro</string>
+    <!-- Default label; the vocab/bigbook flavors override this (and the
+         *_practice / *_hurry mood variants) via resValue in build.gradle.kts. -->
+    <string name="app_name">VocabPro</string>
 
     <!-- Notification channel shown in Android's per-app notification
          settings. Overridden per-flavor at

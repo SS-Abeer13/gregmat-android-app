@@ -93,7 +93,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_sad"
             android:roundIcon="@mipmap/ic_launcher_sad_round"
-            android:label="@string/app_name">
+            android:label="@string/app_name_practice">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -107,7 +107,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_crying"
             android:roundIcon="@mipmap/ic_launcher_crying_round"
-            android:label="@string/app_name">
+            android:label="@string/app_name_hurry">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

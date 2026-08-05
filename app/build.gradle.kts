@@ -19,12 +19,18 @@ android {
         create("vocab") {
             dimension = "appMode"
             applicationId = "com.example.gregmatvocabpro"
-            resValue("string", "app_name", "GregMat Vocab Pro")
+            // Launcher label. The Sad/Crying mood aliases use the *_practice /
+            // *_hurry variants so the home-screen name escalates with the icon.
+            resValue("string", "app_name", "VocabPro")
+            resValue("string", "app_name_practice", "VocabPro - Practice?")
+            resValue("string", "app_name_hurry", "VocabPro - Hurry Up!")
         }
         create("bigbook") {
             dimension = "appMode"
             applicationId = "com.example.gregmatbigbookquiz"
             resValue("string", "app_name", "Big Book GRE Quiz")
+            resValue("string", "app_name_practice", "Big Book - Practice?")
+            resValue("string", "app_name_hurry", "Big Book - Hurry Up!")
         }
     }
 
