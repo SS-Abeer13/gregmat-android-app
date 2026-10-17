@@ -32,6 +32,13 @@ android {
             resValue("string", "app_name_practice", "Big Book - Practice?")
             resValue("string", "app_name_hurry", "Big Book - Hurry Up!")
         }
+        create("obsidian") {
+            dimension = "appMode"
+            applicationId = "com.example.gregmatvocabobsidian"
+            resValue("string", "app_name", "VocabPro Obsidian")
+            resValue("string", "app_name_practice", "VocabPro Obsidian-Practice❓")
+            resValue("string", "app_name_hurry", "VocabPro Obsidian-HurryUp⏰")
+        }
     }
 
     buildTypes {

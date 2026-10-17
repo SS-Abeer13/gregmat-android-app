@@ -3,8 +3,8 @@ echo ===================================================
 echo   GregMat Vocab Pro - Vocab App Build & Install
 echo ===================================================
 
-set "JAVA_HOME=F:\jdk-17.0.10+7"
-set "PATH=%JAVA_HOME%\bin;C:\Users\Abeer\AppData\Local\Android\Sdk\platform-tools;F:\node-v20.11.1-win-x64;%PATH%"
+set "JAVA_HOME=C:\Program Files\Microsoft\jdk-17.0.19.10-hotspot"
+set "PATH=%JAVA_HOME%\bin;F:\AndroidSDK\platform-tools;C:\Users\Abeer\AppData\Local\Android\Sdk\platform-tools;F:\node-v20.11.1-win-x64;%PATH%"
 
 echo 1/3. Building Web Production Dist...
 cd /d "C:\Users\Abeer\antigravity\GregMat-GRE-Vocab-Pro"

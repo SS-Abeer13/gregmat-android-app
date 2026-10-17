@@ -445,7 +445,30 @@ fun MainScreen(
             view: WebView,
             request: WebResourceRequest
           ): WebResourceResponse? {
-            return assetLoader.shouldInterceptRequest(request.url)
+            val response = assetLoader.shouldInterceptRequest(request.url)
+            if (response != null) return response
+
+            val path = request.url.path ?: ""
+            if (path.startsWith("/Images/words/")) {
+              val subPath = "dist" + path
+              return try {
+                val stream = context.assets.open(subPath)
+                val mime = if (subPath.endsWith(".webp")) "image/webp" else "image/jpeg"
+                WebResourceResponse(mime, "UTF-8", stream)
+              } catch (e: Exception) {
+                null
+              }
+            } else if (path.startsWith("/Images/")) {
+              val subPath = path.removePrefix("/")
+              return try {
+                val stream = context.assets.open(subPath)
+                val mime = if (subPath.endsWith(".png")) "image/png" else "image/jpeg"
+                WebResourceResponse(mime, "UTF-8", stream)
+              } catch (e: Exception) {
+                null
+              }
+            }
+            return null
           }
         }
         addJavascriptInterface(ttsInterface, "AndroidTTS")
@@ -517,6 +540,8 @@ fun MainScreen(
 
         val startUrl = if (context.packageName.contains("bigbook")) {
           "https://appassets.androidplatform.net/assets/dist/index.html?mode=bigbook"
+        } else if (context.packageName.contains("obsidian")) {
+          "https://appassets.androidplatform.net/assets/dist/index.html?mode=obsidian"
         } else {
           "https://appassets.androidplatform.net/assets/dist/index.html"
         }
